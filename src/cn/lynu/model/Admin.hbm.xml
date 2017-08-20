@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+	<hibernate-mapping>
+	  <class name="cn.lynu.model.Admin" table="admin">
+	    <id name="id" column="id">
+		<!--主键生成策略-->
+	      <generator class="native"></generator>
+	    </id>
+	    
+		<!--字段对应表中的属性名-->
+	    <property name="adminName" column="adminName"/>
+	    <property name="password" column="password"/>
+	  
+	  </class>
+	</hibernate-mapping>

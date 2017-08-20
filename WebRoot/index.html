@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]><script>window.location.href="/zhiwen/error/index.html"</script><![endif]-->
+<html>
+<head>
+<title>知问</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.datepicker-zh-CN.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/messages_zh.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/jquery.form.min.js"></script>
+
+
+    <script type="text/javascript" src="umeditor/third-party/template.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="umeditor/umeditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="umeditor/umeditor.min.js"></script>
+    <script type="text/javascript" src="umeditor/lang/zh-cn/zh-cn.js"></script>
+
+<script type="text/javascript" src="js/index.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+
+    <link href="umeditor/themes/default/css/umeditor.min.css" type="text/css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
+</head>
+
+<body>
+
+	<div id="header">
+		<div class="header-main">
+			<h1>知问</h1>
+			<div class="header-search">
+				<input type="text" name="search" class="search" />
+			</div>
+			<div class="header-button">
+				<button id="search_button">查询</button>
+				<button id="edit_button">提问</button>
+			</div>
+			<div class="header_member">
+				<a href="javascript:void(0)" id="reg_a">注册</a> 
+				<a href="javascript:void(0)" id="member">用户</a>
+				 | 
+				<a href="javascript:void(0)" id="login_a">登录</a>
+			    <a href="javascript:void(0)" id="logout">退出</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="main">
+
+		<div class="main_left">
+			<div id="tabs">
+				<ul>
+					<li><a href="tab1.html">最热门的提问</a></li>
+					<li><a href="tab2.html">小编推荐的提问</a></li>
+					<li><a href="tab3.html">评论最多的提问</a></li>
+				</ul>
+			</div>
+			
+			
+		<div class="content">
+		
+		</div>
+			
+		</div>
+		
+		
+
+		<div class="main_right">
+			<div id="accordion">
+				<h1>我关注的人</h1>
+				<div>内容1</div>
+				<h1>关注我的人</h1>
+				<div>内容2</div>
+				<h1>我的提问列表</h1>
+				<div>内容3</div>
+			</div>
+		</div>
+
+	</div>
+
+	<form id="reg" title="会员注册">
+
+		<ol class="reg_err"></ol>
+
+		<p>
+			<label for="user">帐　　号：</label> <input type="text" name="userName"
+				class="text" id="user" title="帐号不少于 2 位"/> <span class="star">*</span>
+		</p>
+		<p>
+			<label for="password">密　　码：</label> <input type="password"
+				name="password" class="text" id="password" title="密码不少于 6 位"/> <span class="star">*</span>
+		</p>
+		<p>
+			<label for="notpass">确认密码：</label> <input type="text" name="notpass"
+				class="text" id="notpass" /> <span class="star">*</span>
+		</p>
+		<p>
+			<label for="email">邮　　箱：</label> <input type="text" name="email"
+				class="text" id="email" /> <span class="star">*</span>
+		</p>
+		<p>
+			<label>性　　别：</label> <input type="radio" name="sex" value="1"
+				id="male" checked="checked"><label for="male">男</label></input><input
+				type="radio" name="sex" value="1" id="female"><label
+				for="female">女</label></input>
+		</p>
+		<p>
+			<label for="date">生　　日：</label> <input type="text" name="date"
+				readonly="readonly" class="text" id="date" />
+		</p>
+	</form>
+
+	<div id="loading">努力加载中...</div>
+
+
+
+
+
+	<form id="login" title="会员登录">
+
+		<ol class="login_err"></ol>
+
+		<p>
+			<label for="user">帐号：</label> <input type="text" name="userName"
+				class="text" id="login_user" /> <span class="star">*</span>
+		</p>
+		<p>
+			<label for="password">密码：</label> <input type="password"
+				name="password" class="text" id="login_pass" /> <span class="star">*</span>
+		</p>
+		<p id="p_expires">
+			<input type="checkbox" name="expires" id="expires" checked="checked" /><label
+				for="expires">登录后有效期一周</label>
+		</p>
+	</form>
+	
+<form id="question" title="提问">
+  <ol class="login_err"></ol>
+  <p>
+    <label for="user">问题标题：</label><span class="star">*</span>
+    <input type="text" name="title" class="text" style="width:370px;" id="title" />
+    <span class="star"></span>
+  </p>
+  <p></p>
+  <p>
+   <label for="user">问题描述：</label><span class="star">*</span>
+    <script type="text/plain" id="myEditor" style="width:560px;height:140px;" name="content" type="text/plain">
+请填写问题描述！(1000字以内)
+    </script>
+    <script type="text/javascript">
+      var um = UM.getEditor('myEditor');
+    </script>
+    <span class="star"></span>
+  </p>
+</form>
+	
+	<div id="error">请登录后操作...</div>
+
+
+	<div id="footer">
+	   <span>李展制作   仅供学习</span></br>
+       <span style="font-family:Arial;">Copyright © 2017 - 2100 All Rights Reserved</span>
+	</div>
+
+
+</body>
+</html>

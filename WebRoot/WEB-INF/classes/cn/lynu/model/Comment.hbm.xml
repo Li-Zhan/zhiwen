@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+	<hibernate-mapping>
+	  <class name="cn.lynu.model.Comment" table="comment">
+	    <id name="cid" column="cid">
+		<!--主键生成策略-->
+	      <generator class="native"></generator>
+	    </id>
+	    
+		<!--字段对应表中的属性名-->
+	    <property name="titleid" column="titleid"/>
+	    <property name="user" column="user"/>
+	    <property name="comment" column="comment"/>
+	    <property name="date" column="date"/>
+	  
+	  </class>
+	</hibernate-mapping>
